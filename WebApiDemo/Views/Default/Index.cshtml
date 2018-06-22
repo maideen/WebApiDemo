@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebApiDemo.Models.Articles>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WebApiDemo</title>
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body>
+   
+
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <a href="/api/articles/@item.ID">
+                <div class="column">
+                    <div class="image"><img src="~/Content/img/@item.Image" /></div>
+                    <div class="title">@item.Title</div>
+                    <div class="description">@item.Description</div>
+                    <div class="category">@item.Category</div>
+                </div>
+            </a>
+        }
+
+    </div>
+
+
+</body>
+</html>
